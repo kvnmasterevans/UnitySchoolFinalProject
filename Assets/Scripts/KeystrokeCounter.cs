@@ -4,6 +4,10 @@ public class KeystrokeCounter : MonoBehaviour
 {
     public int keyPressCount = 0;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] clackSounds; // drag your 9 clips here
+
     void Update()
     {
         if (Input.anyKeyDown)
@@ -12,10 +16,26 @@ public class KeystrokeCounter : MonoBehaviour
             if (IsValidKey())
             {
                 keyPressCount++;
+                PlayClack();
                 Debug.Log("Key presses: " + keyPressCount);
             }
         }
     }
+
+
+    void PlayClack()
+    {
+        // Don't start a new sound if one is already playing
+        if (audioSource.isPlaying) return;
+
+        if (clackSounds.Length == 0) return;
+
+        int index = Random.Range(0, clackSounds.Length);
+        audioSource.clip = clackSounds[index];
+        audioSource.Play();
+    }
+
+
 
     bool IsValidKey()
     {
