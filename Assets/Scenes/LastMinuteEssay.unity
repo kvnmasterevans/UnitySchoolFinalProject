@@ -581,7 +581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 333245139}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1040004605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &333245139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1542,6 +1554,7 @@ GameObject:
   - component: {fileID: 1040004602}
   - component: {fileID: 1040004603}
   - component: {fileID: 1040004604}
+  - component: {fileID: 1040004605}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1592,6 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeystrokeCounter
   keyPressCount: 0
+  canCountKeys: 1
   audioSource: {fileID: 1040004604}
   clackSounds:
   - {fileID: 8300000, guid: 11d4ea8a07469544aab8cdf0ecf8b3db, type: 3}
@@ -1699,6 +1713,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1040004605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040004600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ee132243cfbe14abdd5c6a8428cc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1 &1080181943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,11 +2738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c491b79f0c9274eaea34a024141bf57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrainNourishment
-  fillImage: {fileID: 623719864}
-  fillSpeed: 1
-  drainSpeed: 0.1
-  fillAmount: 0
-  holding: 0
 --- !u!114 &1466000807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2955,6 +2976,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1040004603}
+        m_TargetAssemblyTypeName: KeystrokeCounter, Assembly-CSharp
+        m_MethodName: SetCountingEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1468780410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3150,7 +3183,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1499280484}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1040004605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1499280484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3225,7 +3270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 205.92578, y: -26.888885}
+  m_AnchoredPosition: {x: 205.92578, y: -26.888916}
   m_SizeDelta: {x: 68.3703, y: 9.4063}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530549259
@@ -3279,6 +3324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeystrokeCounter
   keyPressCount: 0
+  canCountKeys: 1
   audioSource: {fileID: 1040004604}
   clackSounds: []
 --- !u!114 &1530549262
@@ -3296,6 +3342,7 @@ MonoBehaviour:
   counter: {fileID: 1040004603}
   bar: {fileID: 1530549259}
   maxKeyPresses: 100
+  winningScreen: {fileID: 825840265}
 --- !u!1 &1541982416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,7 +3530,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542538188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1040004605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1542538188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,6 +3699,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1040004603}
+        m_TargetAssemblyTypeName: KeystrokeCounter, Assembly-CSharp
+        m_MethodName: SetCountingEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1547421770
 MonoBehaviour:
@@ -4496,7 +4567,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2093976743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1040004605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2093976743
 MonoBehaviour:
   m_ObjectHideFlags: 0
