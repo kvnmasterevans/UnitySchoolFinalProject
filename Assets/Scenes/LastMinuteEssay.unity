@@ -1469,6 +1469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeystrokeCounter
   keyPressCount: 0
+  targetCanvas: {fileID: 245645938}
   audioSource: {fileID: 1040004604}
   clackSounds:
   - {fileID: 8300000, guid: 11d4ea8a07469544aab8cdf0ecf8b3db, type: 3}
@@ -2755,6 +2756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeystrokeCounter
   keyPressCount: 0
+  targetCanvas: {fileID: 0}
   audioSource: {fileID: 1040004604}
   clackSounds: []
 --- !u!114 &1530549262
