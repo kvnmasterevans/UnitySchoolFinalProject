@@ -8,6 +8,9 @@ public class Timer : MonoBehaviour
     [SerializeField] float remainingTime = 60;
     [SerializeField] float decreaseTimeRate = 1;
 
+    // Lose game variable
+    public GameObject losingScreen;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,5 +24,21 @@ public class Timer : MonoBehaviour
         int minute = Mathf.FloorToInt(remainingTime / 60);
         int second = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minute, second);
+
+        // Checks if time ran out and calls LoseGame
+        if (remainingTime <= 0)
+        {
+            LoseGame();
+            return;
+        }
+    }
+
+    // Creates LoseGame function and displays game over screen
+    void LoseGame()
+    {
+        if (losingScreen != null)
+            losingScreen.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }

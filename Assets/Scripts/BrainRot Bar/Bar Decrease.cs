@@ -15,6 +15,8 @@ public class BarDecrease : MonoBehaviour
 
     public bool isPaused = false; //draining is paused when cody is on screen
 
+    // Lose game variable
+    public GameObject losingScreen;
 
     void Start()
     {
@@ -40,6 +42,13 @@ public class BarDecrease : MonoBehaviour
         {
             fillImage.fillAmount = value / maxValue;
         }
+
+        // Checks if boredom meter is 0 and calls LoseGame
+        if (value <= 0)
+        {
+            LoseGame();
+            return;
+        }
     }
 
     public void SetHolding(bool state)
@@ -58,5 +67,14 @@ public class BarDecrease : MonoBehaviour
         {
             holding = false;
         }
+    }
+
+    // Creates LoseGame function and displays game over screen
+    void LoseGame()
+    {
+        if (losingScreen != null)
+            losingScreen.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }

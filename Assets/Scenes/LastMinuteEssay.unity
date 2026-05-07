@@ -1372,6 +1372,7 @@ MonoBehaviour:
   fillSpeed: 0.6
   drainSpeed: 0.15
   isPaused: 0
+  losingScreen: {fileID: 1080181943}
 --- !u!4 &722054388
 Transform:
   m_ObjectHideFlags: 0
@@ -1864,6 +1865,7 @@ MonoBehaviour:
   timerText: {fileID: 742739463}
   remainingTime: 61
   decreaseTimeRate: 1
+  losingScreen: {fileID: 1080181943}
 --- !u!114 &1040004603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2021,6 +2023,7 @@ MonoBehaviour:
   inputTimeLimit: 4
   promptText: {fileID: 2095780504}
   codyTimerBar: {fileID: 382740475}
+  losingScreen: {fileID: 1080181943}
 --- !u!1 &1080181943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,6 +3836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f811b9d928f84b548914bef3eefbabd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeypressBarUI
+  cody: {fileID: 0}
   counter: {fileID: 1040004603}
   bar: {fileID: 1530549259}
   maxKeyPresses: 100
@@ -4331,7 +4335,7 @@ GameObject:
   - component: {fileID: 1601369975}
   - component: {fileID: 1601369974}
   m_Layer: 5
-  m_Name: You're too late text
+  m_Name: Win text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4663,7 +4667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You're Too Late Assignment Close
+  m_text: You're Too Late Assignment Closed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

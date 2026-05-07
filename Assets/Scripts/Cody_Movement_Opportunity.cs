@@ -28,6 +28,10 @@ public class Cody : MonoBehaviour
     private bool waitingForInput = false;
 
     private float currentTimer;
+
+    // Lose game variable
+    public GameObject losingScreen;
+
     private void Start()
     {
         keystrokeCounter = GetComponent<KeystrokeCounter>();
@@ -109,6 +113,8 @@ public class Cody : MonoBehaviour
         {
             Debug.Log("Too slow!");
             HideCody();
+            // If input timer is 0 call LoseGame
+            LoseGame();
             return;
         }
 
@@ -138,5 +144,14 @@ public class Cody : MonoBehaviour
         waitingForInput = false;
 
         codyCheckTimer = codyMovementOpportunity; //resets cody's timer
+    }
+
+    // Creates LoseGame function and displays game over screen
+    void LoseGame()
+    {
+        if (losingScreen != null)
+            losingScreen.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }
