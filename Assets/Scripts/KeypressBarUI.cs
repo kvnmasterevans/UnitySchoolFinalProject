@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class KeypressBarUI : MonoBehaviour
 {
+    [SerializeField] Cody cody;
+
     public KeystrokeCounter counter;
     public Image bar;
     public int maxKeyPresses = 100;
