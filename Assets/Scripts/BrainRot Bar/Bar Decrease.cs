@@ -13,6 +13,8 @@ public class BarDecrease : MonoBehaviour
 
     private bool holding = false;
 
+    public bool isPaused = false; //draining is paused when cody is on screen
+
 
     void Start()
     {
@@ -21,6 +23,8 @@ public class BarDecrease : MonoBehaviour
 
     void Update()
     {
+        if (isPaused) return;
+
         if (holding)
         {
             value += fillSpeed * Time.deltaTime;
@@ -40,6 +44,19 @@ public class BarDecrease : MonoBehaviour
 
     public void SetHolding(bool state)
     {
-        holding = state;
+        if (isPaused)
+            holding = false;
+        else
+            holding = state;
+    }
+
+    public void SetPaused(bool state)
+    {
+        isPaused = state;
+
+        if (isPaused)
+        {
+            holding = false;
+        }
     }
 }
