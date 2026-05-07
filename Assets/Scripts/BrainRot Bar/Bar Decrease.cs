@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class HoldMeter : MonoBehaviour
+public class BarDecrease : MonoBehaviour
 {
-    public float value = 0f;
+    public Image fillImage;
+
+    public float value = 2f;
     public float maxValue = 2f;
 
     public float fillSpeed = 1f;
@@ -10,23 +13,33 @@ public class HoldMeter : MonoBehaviour
 
     private bool holding = false;
 
+
+    void Start()
+    {
+        value = maxValue;
+    }
+
     void Update()
     {
         if (holding)
+        {
             value += fillSpeed * Time.deltaTime;
+        }
         else
+        {
             value -= drainSpeed * Time.deltaTime;
+        }
 
         value = Mathf.Clamp(value, 0f, maxValue);
+
+        if (fillImage != null)
+        {
+            fillImage.fillAmount = value / maxValue;
+        }
     }
 
     public void SetHolding(bool state)
     {
         holding = state;
-    }
-
-    public float GetFill()
-    {
-        return value / maxValue;
     }
 }

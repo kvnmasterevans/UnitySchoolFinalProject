@@ -581,7 +581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 333245139}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1040004605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &333245139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,12 +873,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 722054388}
   m_Father: {fileID: 1182721219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -40}
+  m_AnchoredPosition: {x: -200, y: -25}
   m_SizeDelta: {x: 68, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &623719864
@@ -993,7 +1006,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -640, y: -360.11942, z: 0}
-  m_LocalScale: {x: 0.8597015, y: 0.6686567, z: 1}
+  m_LocalScale: {x: 1.35, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1023368718}
@@ -1164,10 +1177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a238757bceba44ccca794f91750e1ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoldMeter
+  fillImage: {fileID: 623719864}
   value: 0
   maxValue: 2
-  fillSpeed: 1
-  drainSpeed: 0.1
+  fillSpeed: 0.6
+  drainSpeed: 0.15
 --- !u!4 &722054388
 Transform:
   m_ObjectHideFlags: 0
@@ -1176,12 +1190,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722054386}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 530.16223, y: 301.81094, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101.106384, y: 41.372902, z: 0}
+  m_LocalScale: {x: 0.5981308, y: 0.5981308, z: 2.9906542}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 623719863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742739461
 GameObject:
@@ -1542,6 +1556,7 @@ GameObject:
   - component: {fileID: 1040004602}
   - component: {fileID: 1040004603}
   - component: {fileID: 1040004604}
+  - component: {fileID: 1040004605}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1592,6 +1607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeystrokeCounter
   keyPressCount: 0
+  canCountKeys: 1
   audioSource: {fileID: 1040004604}
   clackSounds:
   - {fileID: 8300000, guid: 11d4ea8a07469544aab8cdf0ecf8b3db, type: 3}
@@ -1699,6 +1715,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1040004605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040004600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ee132243cfbe14abdd5c6a8428cc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1 &1080181943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,8 +2265,8 @@ Transform:
   m_GameObject: {fileID: 1214699416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -639.764, y: -359.526, z: 0}
-  m_LocalScale: {x: 1.0218683, y: 0.7504064, z: 0}
+  m_LocalPosition: {x: -640.3, y: -360.9, z: 0}
+  m_LocalScale: {x: 1.35, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245645942}
@@ -2487,6 +2515,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1040004603}
+        m_TargetAssemblyTypeName: KeystrokeCounter, Assembly-CSharp
+        m_MethodName: SetCountingEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1369474723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2627,7 +2667,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441853827}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 4c8176ccebeaf4d948a1ee9106ec4536, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6cbc5125265994f639b43c6bfb1fec5f, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 695957705}
@@ -2712,11 +2752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c491b79f0c9274eaea34a024141bf57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrainNourishment
-  fillImage: {fileID: 623719864}
-  fillSpeed: 1
-  drainSpeed: 0.1
-  fillAmount: 0
-  holding: 0
 --- !u!114 &1466000807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2831,11 +2866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbba4c172e0ca477eab1baf444da3afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoldButtonUI
-  fillImage: {fileID: 623719864}
-  value: 0
-  maxValue: 2
-  fillSpeed: 1
-  drainSpeed: 0.1
+  barDecrease: {fileID: 722054387}
 --- !u!1 &1468780407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +2985,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1040004603}
+        m_TargetAssemblyTypeName: KeystrokeCounter, Assembly-CSharp
+        m_MethodName: SetCountingEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1468780410
 MonoBehaviour:
@@ -3150,7 +3193,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1499280484}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1040004605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1499280484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3225,7 +3280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 205.92578, y: -26.888885}
+  m_AnchoredPosition: {x: 205.92578, y: -26.888916}
   m_SizeDelta: {x: 68.3703, y: 9.4063}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530549259
@@ -3279,6 +3334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeystrokeCounter
   keyPressCount: 0
+  canCountKeys: 1
   audioSource: {fileID: 1040004604}
   clackSounds: []
 --- !u!114 &1530549262
@@ -3296,6 +3352,7 @@ MonoBehaviour:
   counter: {fileID: 1040004603}
   bar: {fileID: 1530549259}
   maxKeyPresses: 100
+  winningScreen: {fileID: 825840265}
 --- !u!1 &1541982416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,7 +3540,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542538188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1040004605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1542538188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,6 +3709,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1040004603}
+        m_TargetAssemblyTypeName: KeystrokeCounter, Assembly-CSharp
+        m_MethodName: SetCountingEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1547421770
 MonoBehaviour:
@@ -4376,6 +4457,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1040004603}
+        m_TargetAssemblyTypeName: KeystrokeCounter, Assembly-CSharp
+        m_MethodName: SetCountingEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1971508909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4496,7 +4589,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2093976743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1040004605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2093976743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4548,5 +4653,4 @@ SceneRoots:
   - {fileID: 1080181947}
   - {fileID: 825840269}
   - {fileID: 1788630443}
-  - {fileID: 722054388}
   - {fileID: 1127488634}
