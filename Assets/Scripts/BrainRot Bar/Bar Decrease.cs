@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BarDecrease : MonoBehaviour
 {
@@ -73,7 +74,12 @@ public class BarDecrease : MonoBehaviour
     void LoseGame()
     {
         if (losingScreen != null)
+        {
             losingScreen.SetActive(true);
+            
+            losingScreen.GetComponentInChildren<TMP_Text>().text = "You got too bored and fell asleep";
+        }
+            
 
         Time.timeScale = 0f;
     }

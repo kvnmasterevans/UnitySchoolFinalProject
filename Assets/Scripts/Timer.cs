@@ -37,7 +37,12 @@ public class Timer : MonoBehaviour
     void LoseGame()
     {
         if (losingScreen != null)
+        {
             losingScreen.SetActive(true);
+            losingScreen.GetComponentInChildren<TMP_Text>().text = "You missed the submission deadline";
+        }
+            
+            
 
         Time.timeScale = 0f;
     }

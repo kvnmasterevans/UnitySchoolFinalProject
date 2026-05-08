@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Cody : MonoBehaviour
 {
@@ -150,7 +151,11 @@ public class Cody : MonoBehaviour
     void LoseGame()
     {
         if (losingScreen != null)
+        {
             losingScreen.SetActive(true);
+            losingScreen.GetComponentInChildren<TMP_Text>().text = "Cody kicked you out";
+        }
+            
 
         Time.timeScale = 0f;
     }
